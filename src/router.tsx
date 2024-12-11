@@ -1,9 +1,12 @@
-import React from 'react';
+import React from "react";
+import Layout from "./layout";
 
 const Router = () => {
   return (
-    <div>Router</div>
-  )
-}
+    <Layout>
+      <div></div>
+    </Layout>
+  );
+};
 
-export default Router
+export default Router;
