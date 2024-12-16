@@ -1,12 +1,19 @@
 import React from "react";
 import Layout from "./layout";
 import Advertisers from "./Pages/Advertisers/advertisers.tsx";
+import Heroes from "./Pages/Heroes/heroes.tsx";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 const Router = () => {
   return (
-    <Layout>
-      <Advertisers />
-    </Layout>
+    <BrowserRouter>
+      <Layout>
+        <Routes>
+          <Route path="/advertisers" element={<Advertisers />} />
+          <Route path="/heroes" element={<Heroes />} />
+        </Routes>
+      </Layout>
+    </BrowserRouter>
   );
 };
 

@@ -1,5 +1,6 @@
 import React from "react";
 import Logo from "../../assets/images/logo.png";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
@@ -10,7 +11,9 @@ const Navbar = () => {
         </div>
         <ul className="main_links">
           <li>Главная</li>
-          <li>Герой</li>
+          <Link to="/heroes">
+            <li>Герой</li>
+          </Link>
           <li className="dropdown_trigger">
             Журнал
             <ul className="dropdown_menu">
@@ -22,7 +25,9 @@ const Navbar = () => {
             </ul>
           </li>
           <li>Фото</li>
-          <li>Рекламодателям</li>
+          <Link to="/advertisers">
+            <li>Рекламодателям</li>
+          </Link>
           <li>Карине</li>
           <li>Контакты</li>
         </ul>

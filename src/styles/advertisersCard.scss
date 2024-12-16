@@ -12,14 +12,14 @@
     justify-content: center;
 }
 
-.card_logo{
+.advertisers_card_logo{
     width: 100px;
     height: 100px;
     background-color: #525252;
     border-radius: 50%;
 }
 
-.card_description{
+.advertisers_card_description{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -29,7 +29,7 @@
     height: 50%;
 }
 
-.card_title{
+.advertisers_card_title{
     text-align: center;
     font-size: 32px;
     font-weight: 600;
@@ -37,14 +37,14 @@
     color: var(--Card-Text-color);
 }
 
-.card_price{
+.advertisers_card_price{
     text-align: center;
     font-size: 16px;
     font-family: var(--Font-family);
     color: var(--Card-Border-color);
 }
 
-.card_button{
+.advertisers_card_button{
     margin-top: 15px;
     padding: 8px 22px;
     border-radius: 14px;
