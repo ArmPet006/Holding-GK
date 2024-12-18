@@ -8,6 +8,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: var(--Heroes-Card-Background-color);
 }
 
 .heroes_card_heading{
@@ -47,19 +48,33 @@
 .heroes_card_icon{
     width: 25px;
     height: 25px;
-    border-radius: 10px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
     background-color: var(--Active-Link-color);
 }
 
 .heroes_card_description{
+    width: 50%;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
     padding: 20px;
-    width: 50%;
-    height: 100%;
+    gap: 30px;
     font-family: var(--Font-family);
     font-size: 16px;
     font-weight: 400;
     line-height: 24px;
+}
+
+.heroes_card_button{
+    // margin-top: 15px;
+    padding: 8px 22px;
+    border-radius: 14px;
+    font-family: var(--Font-family);
+    color: var(--Active-Link-color);
+    border: 1px solid var(--Active-Link-color);
+    cursor: pointer;
 }
