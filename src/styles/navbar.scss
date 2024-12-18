@@ -84,3 +84,7 @@
 .dropdown_trigger:hover .dropdown_menu {
   visibility: visible;
 }
+
+.active{
+  color: var(--Active-Link-color) !important;
+}

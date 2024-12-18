@@ -1,4 +1,5 @@
 import React from "react";
+import Button from "../UI/Button/button";
 
 type HeroesCardPropTypes = {
   image: string | undefined;
@@ -21,7 +22,7 @@ const HeroesCard = ({ image, title, description }: HeroesCardPropTypes) => {
       </div>
       <div className="heroes_card_description">
         <p>{description}</p>
-        <button className="heroes_card_button">Read More</button>
+        <Button />
       </div>
     </div>
   );

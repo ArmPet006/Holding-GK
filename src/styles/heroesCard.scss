@@ -62,19 +62,9 @@
     justify-content: center;
     flex-direction: column;
     padding: 20px;
-    gap: 30px;
+    gap: 15px;
     font-family: var(--Font-family);
     font-size: 16px;
     font-weight: 400;
     line-height: 24px;
-}
-
-.heroes_card_button{
-    // margin-top: 15px;
-    padding: 8px 22px;
-    border-radius: 14px;
-    font-family: var(--Font-family);
-    color: var(--Active-Link-color);
-    border: 1px solid var(--Active-Link-color);
-    cursor: pointer;
 }
