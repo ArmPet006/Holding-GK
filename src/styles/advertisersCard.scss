@@ -3,7 +3,7 @@
     height: 300px;
     border-radius: 20px;
     border: 3px solid var(--Card-Border-color);
-    box-shadow: 0 0 25px 0 #999595;
+    box-shadow: 0 0 10px 0 #999595;
     padding: 14px;
     gap: 10px;
     display: flex;
@@ -44,12 +44,3 @@
     color: var(--Card-Border-color);
 }
 
-.advertisers_card_button{
-    margin-top: 15px;
-    padding: 8px 22px;
-    border-radius: 14px;
-    font-family: var(--Font-family);
-    color: var(--Active-Link-color);
-    border: 1px solid var(--Active-Link-color);
-    cursor: pointer;
-}
