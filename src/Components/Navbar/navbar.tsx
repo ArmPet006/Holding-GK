@@ -1,70 +1,34 @@
-import React, { useState } from "react";
+import React from "react";
 import Logo from "../../assets/images/logo.png";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
-  const [activeLink, setActiveLink] = useState("/");
-
-  const handleSetActive = (path) => {
-    setActiveLink(path);
-  };
-
-  const isDropdownActive = ["/special_project"].includes(activeLink);
-
-  return (
-    <div className="navbar_container">
-      <nav>
-        <div className="logo">
-          <img className="logo_image" src={Logo} alt="logo" />
-        </div>
-        <ul className="main_links">
-          <li
-            className={activeLink === "/" ? "active" : ""}
-            onClick={() => handleSetActive("/")}
-          >
-            Главная
-          </li>
-          <Link to="/heroes">
-            <li
-              className={activeLink === "/heroes" ? "active" : ""}
-              onClick={() => handleSetActive("/heroes")}
-            >
-              Герой
-            </li>
-          </Link>
-          <li
-            className={`dropdown_trigger ${isDropdownActive ? "active" : ""}`}
-          >
-            Журнал
-            <ul className="dropdown_menu">
-              <Link to="/special_project">
-                <li
-                  className={activeLink === "/special_project" ? "active" : ""}
-                  onClick={() => handleSetActive("/special_project")}
-                >
-                  Спецпроект
-                </li>
-              </Link>
-              <li>Look st</li>
-              <li>Body</li>
-              <li>Fun Toys</li>
-              <li>Home and Design</li>
-            </ul>
-          </li>
-          <Link to="/advertisers">
-            <li
-              className={activeLink === "/advertisers" ? "active" : ""}
-              onClick={() => handleSetActive("/advertisers")}
-            >
-              Рекламодателям
-            </li>
-          </Link>
-          <li>Карине</li>
-          <li>Контакты</li>
-        </ul>
-      </nav>
-    </div>
-  );
+	return (
+		<div className="navbar_container">
+			<nav>
+				<div className="logo">
+					<img className="logo_image" src={Logo} alt="logo" />
+				</div>
+				<ul className="main_links">
+					<NavLink to="/">Главная</NavLink>
+					<NavLink to="/heroes">Герой</NavLink>
+					<NavLink to="/journal">
+						Журнал
+						{/* <ul className="dropdown_menu">
+							<NavLink to="/journal/special-project">Спецпроект</NavLink>
+							<NavLink to="/journal/lookst">Look st</NavLink>
+							<NavLink to="/journal/body">Body</NavLink>
+							<NavLink to="/journal/fun-toys">Fun Toys</NavLink>
+							<NavLink to="/journal/home-and-design">Home and Design</NavLink>
+						</ul> */}
+					</NavLink>
+					<NavLink to="/advertisers">Рекламодателям</NavLink>
+					<NavLink to="/">Карине</NavLink>
+					<NavLink to="/contacts">Контакты</NavLink>
+				</ul>
+			</nav>
+		</div>
+	);
 };
 
 export default Navbar;

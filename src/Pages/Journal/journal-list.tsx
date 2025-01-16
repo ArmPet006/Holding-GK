@@ -1,7 +1,7 @@
-import React, { FC } from "react";
-import HeroesCard from "../../Components/HeroCard/hero-card";
+import React from "react";
+import JournalCard from "../../Components/JournalCard/journal-card";
 
-const Heroes: FC<any> = () => {
+const JournalList = () => {
 	const arr = Array(10).fill({
 		image: undefined,
 		title: "Heading",
@@ -9,9 +9,9 @@ const Heroes: FC<any> = () => {
 			"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deleniti voluptatibus velit sint obcaecati voluptatem sequi, suscipit deserunt! Maxime aliquam, est harum, fuga possimus quos saepe nam nostrum tempore a nemo?",
 	});
 	return (
-		<div className="heroes_container">
+		<div className="specProj_container">
 			{arr.map((element, index) => (
-				<HeroesCard
+				<JournalCard
 					key={index}
 					image={element.image}
 					title={element.title}
@@ -22,4 +22,4 @@ const Heroes: FC<any> = () => {
 	);
 };
 
-export default Heroes;
+export default JournalList;

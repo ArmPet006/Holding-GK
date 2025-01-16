@@ -1,51 +1,51 @@
-@import url('./reset.scss');
-@import "./theme.scss";
-@import "./navbar.scss";
+@use "./reset.scss";
+@use "./theme.scss";
+@use "./navbar.scss";
+@use "./ui.scss";
 
 // Card SCSSs
-@import "./advertisersCard.scss";
-@import "./heroesCard.scss";
-@import "./specialProjectCard.scss";
+@use "./advertisersCard.scss";
+@use "./heroesCard.scss";
+@use "./specialProjectCard.scss";
 
 // Page SCSSs
-@import "./advertisers.scss";
-@import "./heroes.scss";
-@import "./specProj.scss";
-
+@use "./advertisers.scss";
+@use "./heroes.scss";
+@use "./specProj.scss";
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
-body{
-    background-color: var(--Background-color, #FFF);
+body {
+	background-color: var(--Background-color, #fff);
 }
 
-::-webkit-scrollbar{
-    width: 10px;
+::-webkit-scrollbar {
+	width: 10px;
 }
 
-::-webkit-scrollbar-track{
-    background-color: #b1acac;
-    border-radius: 1rem;
+::-webkit-scrollbar-track {
+	background-color: #b1acac;
+	border-radius: 1rem;
 }
 
-::-webkit-scrollbar-thumb{
-    background-color: #888;
-    border-radius: 1rem;
+::-webkit-scrollbar-thumb {
+	background-color: #888;
+	border-radius: 1rem;
 }
 
-::-webkit-scrollbar-track:hover{
-    background-color: #555;
+::-webkit-scrollbar-track:hover {
+	background-color: #555;
 }
 
-.container{
-    width: 100vw;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-sizing: border-box;
-    padding: 50px 0;
+.container {
+	width: 100vw;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	box-sizing: border-box;
+	padding: 50px 0;
 }

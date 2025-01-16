@@ -1,46 +1,45 @@
-.advertisers_card{
-    width: 250px;
-    height: 300px;
-    border-radius: 20px;
-    border: 3px solid var(--Card-Border-color);
-    box-shadow: 0 0 10px 0 #999595;
-    padding: 14px;
-    gap: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+.advertisers_card {
+	width: 250px;
+	height: 300px;
+	border-radius: 20px;
+	border: 3px solid var(--Card-Border-color);
+	box-shadow: 0 0 10px 0 #999595;
+	padding: 14px;
+	gap: 10px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 }
 
-.advertisers_card_logo{
-    width: 100px;
-    height: 100px;
-    background-color: #525252;
-    border-radius: 50%;
+.advertisers_card_logo {
+	width: 100px;
+	height: 100px;
+	background-color: #525252;
+	border-radius: 50%;
 }
 
-.advertisers_card_description{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 14px;
-    width: 100%;
-    height: 50%;
+.advertisers_card_description {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 14px;
+	width: 100%;
+	height: 50%;
 }
 
-.advertisers_card_title{
-    text-align: center;
-    font-size: 32px;
-    font-weight: 600;
-    font-family: var(--Font-family);
-    color: var(--Card-Text-color);
+.advertisers_card_title {
+	text-align: center;
+	font-size: 32px;
+	font-weight: 600;
+	font-family: var(--Font-family);
+	color: var(--Card-Text-color);
 }
 
-.advertisers_card_price{
-    text-align: center;
-    font-size: 16px;
-    font-family: var(--Font-family);
-    color: var(--Card-Border-color);
+.advertisers_card_price {
+	text-align: center;
+	font-size: 16px;
+	font-family: var(--Font-family);
+	color: var(--Card-Border-color);
 }
-
