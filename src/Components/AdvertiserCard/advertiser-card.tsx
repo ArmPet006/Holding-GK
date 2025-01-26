@@ -1,6 +1,8 @@
 import React, { FC } from "react";
 import Button from "../UI/Button/button";
 
+import "./advertiser-card.scss";
+
 type Props = {
 	logo: string | undefined;
 	title: string;

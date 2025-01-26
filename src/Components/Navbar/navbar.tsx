@@ -2,6 +2,8 @@ import React from "react";
 import Logo from "../../assets/images/logo.png";
 import { NavLink } from "react-router-dom";
 
+import "./navbar.scss";
+
 const Navbar = () => {
 	return (
 		<div className="navbar_container">

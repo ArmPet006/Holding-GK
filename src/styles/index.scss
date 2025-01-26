@@ -1,17 +1,6 @@
 @use "./reset.scss";
 @use "./theme.scss";
-@use "./navbar.scss";
 @use "./ui.scss";
-
-// Card SCSSs
-@use "./advertisersCard.scss";
-@use "./heroesCard.scss";
-@use "./specialProjectCard.scss";
-
-// Page SCSSs
-@use "./advertisers.scss";
-@use "./heroes.scss";
-@use "./specProj.scss";
 
 * {
 	margin: 0;

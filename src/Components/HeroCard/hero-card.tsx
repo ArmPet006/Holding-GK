@@ -1,6 +1,8 @@
 import React, { FC } from "react";
 import Button from "../UI/Button/button";
 
+import "./hero-card.scss";
+
 type Props = {
 	image: string | undefined;
 	title: string;
