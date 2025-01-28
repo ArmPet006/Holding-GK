@@ -11,7 +11,7 @@ const Router: FC<any> = () => {
 		<BrowserRouter>
 			<Layout>
 				<Routes>
-					<Route path="/advertisers" element={<Advertisers />} />
+					<Route path="/" />
 					<Route path="/heroes" element={<Heroes />} />
 					<Route path="/journal/">
 						<Route path="special-project" element={<Journal />} />
@@ -20,6 +20,8 @@ const Router: FC<any> = () => {
 						<Route path="fun-toys" element={<Journal />} />
 						<Route path="home-and-design" element={<Journal />} />
 					</Route>
+					<Route path="/advertisers" element={<Advertisers />} />
+					<Route path="/contacts" />
 				</Routes>
 			</Layout>
 		</BrowserRouter>

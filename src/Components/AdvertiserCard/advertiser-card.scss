@@ -1,3 +1,5 @@
+@use "../../styles/theme.scss" as *;
+
 .advertisers_card {
 	width: 250px;
 	height: 300px;
@@ -33,13 +35,13 @@
 	text-align: center;
 	font-size: 32px;
 	font-weight: 600;
-	font-family: var(--Font-family);
+	font-family: $lovers-quarrel;
 	color: var(--Card-Text-color);
 }
 
 .advertisers_card_price {
 	text-align: center;
 	font-size: 16px;
-	font-family: var(--Font-family);
+	font-family: $lovers-quarrel;
 	color: var(--Card-Border-color);
 }

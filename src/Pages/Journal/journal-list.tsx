@@ -1,7 +1,7 @@
-import React from "react";
+import React, { FC } from "react";
 import JournalCard from "../../Components/JournalCard/journal-card";
 
-const JournalList = () => {
+const JournalList: FC<any> = () => {
 	const arr = Array(10).fill({
 		image: undefined,
 		title: "Heading",

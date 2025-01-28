@@ -1,14 +1,18 @@
 :root {
-	--Primary-Text-Color: #253031;
-	--Background-color: #ffffff;
-	--Active-Link-color: #2978a0;
 	--Card-Border-color: #315659;
 	--Card-Text-color: #253031;
 	--Heroes-Card-Background-color: #fbfbfb;
-
-	--Font-family: Inter, sans-serif;
-
-	--Heading-font-size: 32px;
-	--Normal-font-size: 24px;
-	--Text-font-size: 18px;
 }
+
+$navbar-light-bg: #f0eee2;
+$bg-light: linear-gradient(-90deg, #929084 0%, #f0eee2 90%);
+$active-link-light: #14171c;
+$inactive-link-light: #50535a;
+
+$navbar-dark-bg: #1b1e25;
+$bg-dark: linear-gradient(90deg, #14171c 0%, #31353e 90%);
+$active-link-dark: #d2b78a;
+$inactive-link-dark: #ffffff;
+
+$lovers-quarrel: "Lovers Quarrel", cursive;
+$arsenal-sc: "Arsenal SC", serif;

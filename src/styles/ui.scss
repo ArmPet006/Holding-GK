@@ -1,10 +1,12 @@
+@use './theme.scss' as *;
+
 .read_more_btn {
 	margin-top: 15px;
 	padding: 8px 22px;
 	border-radius: 14px;
-	font-family: var(--Font-family);
-	color: var(--Active-Link-color);
-	border: 1px solid var(--Active-Link-color);
+	font-family: $lovers-quarrel;
+	color: $active-link-light;
+	border: 1px solid $active-link-light;
 	cursor: pointer;
 	background-color: transparent;
 }

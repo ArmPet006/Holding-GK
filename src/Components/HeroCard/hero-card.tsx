@@ -3,7 +3,7 @@ import Button from "../UI/Button/button";
 
 import "./hero-card.scss";
 
-type Props = {
+interface Props {
 	image: string | undefined;
 	title: string;
 	description: string;

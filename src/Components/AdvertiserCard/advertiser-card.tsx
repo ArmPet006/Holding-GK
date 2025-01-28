@@ -3,11 +3,11 @@ import Button from "../UI/Button/button";
 
 import "./advertiser-card.scss";
 
-type Props = {
+interface Props {
 	logo: string | undefined;
 	title: string;
 	price: number;
-};
+}
 
 const AdvertisersCard: FC<Props> = ({ logo, title, price }) => {
 	return (

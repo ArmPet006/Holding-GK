@@ -1,6 +1,6 @@
 @use "./reset.scss";
-@use "./theme.scss";
 @use "./ui.scss";
+@use "./theme.scss" as *;
 
 * {
 	margin: 0;
@@ -9,7 +9,11 @@
 }
 
 body {
-	background-color: var(--Background-color, #fff);
+	background: $bg-light;
+	
+	&.dark {
+		background: $bg-dark;
+	}
 }
 
 ::-webkit-scrollbar {

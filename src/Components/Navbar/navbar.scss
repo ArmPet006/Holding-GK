@@ -1,62 +1,210 @@
-.navbar_container {
+@use "../../styles/theme.scss" as *;
+
+@mixin icon-theme($light-theme) {
+	@if $light-theme {
+		img {
+			&[icon-name="home"] {
+				content: url("../../assets/icons/navbar/light-active/home-icon.png");
+			}
+			&[icon-name="heroes"] {
+				content: url("../../assets/icons/navbar/light-active/heroes-icon.png");
+			}
+			&[icon-name="journal"] {
+				content: url("../../assets/icons/navbar/light-active/journal-icon.png");
+			}
+			&[icon-name="ads"] {
+				content: url("../../assets/icons/navbar/light-active/ads-icon.png");
+			}
+			&[icon-name="contacts"] {
+				content: url("../../assets/icons/navbar/light-active/contact-icon.png");
+			}
+		}
+	} @else {
+		img {
+			&[icon-name="home"] {
+				content: url("../../assets/icons/navbar/dark-active/home-icon.png");
+			}
+			&[icon-name="heroes"] {
+				content: url("../../assets/icons/navbar/dark-active/heroes-icon.png");
+			}
+			&[icon-name="journal"] {
+				content: url("../../assets/icons/navbar/dark-active/journal-icon.png");
+			}
+			&[icon-name="ads"] {
+				content: url("../../assets/icons/navbar/dark-active/ads-icon.png");
+			}
+			&[icon-name="contacts"] {
+				content: url("../../assets/icons/navbar/dark-active/contact-icon.png");
+			}
+		}
+	}
+}
+
+@mixin navbar-theme($light-theme) {
+	@if $light-theme {
+		background: $navbar-light-bg;
+
+		a {
+			color: $inactive-link-light;
+
+			span {
+				color: $active-link-light;
+			}
+
+			&.active {
+				color: $active-link-light;
+				@include icon-theme($light-theme: true);
+			}
+
+			&::before {
+				background: $active-link-light;
+			}
+
+			&:hover {
+				color: $active-link-light;
+			}
+		}
+	} @else {
+		background: $navbar-dark-bg;
+
+		a {
+			color: $inactive-link-dark;
+
+			span {
+				color: $active-link-dark;
+			}
+
+			&.active {
+				color: $active-link-dark;
+				@include icon-theme($light-theme: false);
+			}
+
+			&::before {
+				background: $active-link-dark;
+			}
+
+			&:hover {
+				color: $active-link-dark;
+			}
+		}
+	}
+}
+
+.navbar {
 	height: auto;
-	width: 100%;
+	width: 10%;
+	height: 100vh;
 	display: flex;
-	align-items: center;
-	justify-content: center;
-}
+	align-items: flex-start;
+	justify-content: flex-start;
+	flex-direction: column;
+	position: fixed;
+	padding: 30px 0px;
+	box-sizing: border-box;
+	transition: 0.5s;
+	overflow: hidden;
 
-.logo {
-	max-width: 100px;
-	max-height: 100px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
+	@include navbar-theme($light-theme: true);
 
-.logo_image {
-	width: 100%;
-	height: 100%;
-}
+	&.dark {
+		@include navbar-theme($light-theme: false);
+	}
 
-.navbar_container {
-	nav {
-		width: 100%;
+	&:hover {
+		width: 18%;
+		transition: 0.4s;
+
+		.wrapper {
+			.main_links {
+				a::after {
+					opacity: 1;
+					transition: 0.5s;
+				}
+			}
+		}
+	}
+
+	.wrapper {
+		width: calc(100vw * 10 / 100);
+		height: 100%;
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		padding: 0 24px;
+		flex-direction: column;
+
+		.theme_toggle {
+			width: 35px;
+			height: 35px;
+			border: none;
+			cursor: pointer;
+
+			img {
+				width: 100%;
+			}
+		}
+	}
+}
+
+.logo {
+	width: 70px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	img {
+		width: 100%;
+		height: 100%;
 	}
 }
 
 .main_links {
-	width: auto;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	gap: 20px;
-	padding: 0 24px;
+	flex-direction: column;
+	gap: 40px;
 	list-style: none;
-	margin: 0;
+	// margin-top: 80px;
 
 	a {
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		font-family: var(--Font-family);
+		font-family: $arsenal-sc;
 		font-weight: 400;
-		font-size: var(--Text-font-size);
+		font-size: 18px;
 		line-height: 30px;
-		color: var(--Primary-Text-Color);
 		cursor: pointer;
-		position: relative;
 
-		&:hover {
-			color: var(--Active-Link-color);
+		&::after {
+			content: attr(page-name);
+			display: block;
+			position: absolute;
+			left: 120px;
+			opacity: 0;
+			transition: 0.2s;
 		}
-	}
 
-	a.active {
-		color: var(--Active-Link-color) !important;
+		&.active {
+			&::before {
+				content: "";
+				width: 3px;
+				height: 35px;
+				display: block;
+				position: absolute;
+				right: 5px;
+				border-radius: 10px;
+			}
+		}
+
+		span {
+			font-size: 45px;
+			font-family: $lovers-quarrel;
+		}
+
+		.icon {
+			width: 35px;
+			height: 35px;
+		}
 	}
 }
