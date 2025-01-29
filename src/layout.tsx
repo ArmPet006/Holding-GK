@@ -1,6 +1,6 @@
 import React, {FC, ReactNode, useContext} from "react";
 import Navbar from "./Components/Navbar/navbar.tsx";
-import {ThemeContext} from "./Providers/theme-provider.tsx";
+import {ThemeContext} from "./Contexts/theme-context.tsx";
 
 interface Props {
     children: ReactNode;

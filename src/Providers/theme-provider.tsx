@@ -1,21 +1,9 @@
-import React, {FC, useState, createContext, ReactNode} from 'react';
-
-type Theme = "light" | "dark";
+import React, {FC, useState, ReactNode} from 'react';
+import {ThemeContext, Theme} from '../Contexts/theme-context.tsx';
 
 interface Props {
     children: ReactNode;
 }
-
-interface InitialState {
-    theme: Theme;
-    changeTheme: (theme: Theme) => void;
-}
-
-export const ThemeContext = createContext<InitialState>({
-    theme: "light",
-    changeTheme: () => {
-    },
-});
 
 export const ThemeProvider: FC<Props> = ({children}) => {
     const [theme, setTheme] = useState<Theme>("light");
