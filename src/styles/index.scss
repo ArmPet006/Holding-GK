@@ -8,14 +8,6 @@
 	box-sizing: border-box;
 }
 
-body {
-	background: $bg-light;
-	
-	&.dark {
-		background: $bg-dark;
-	}
-}
-
 ::-webkit-scrollbar {
 	width: 10px;
 }
@@ -41,4 +33,10 @@ body {
 	justify-content: center;
 	box-sizing: border-box;
 	padding: 50px 0;
+	background: $bg-light;
+	transition: background 0.5s;
+
+	&.dark {
+		background: $bg-dark;
+	}
 }
