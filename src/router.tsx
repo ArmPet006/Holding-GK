@@ -14,7 +14,10 @@ const Router: FC<any> = () => {
                 <Layout>
                     <Routes>
                         <Route path="/"/>
-                        <Route path="/heroes" element={<Heroes/>}/>
+                        <Route path="/heroes/">
+                            <Route path="" element={<Heroes/>}/>
+                            <Route path="hero/:name"/>
+                        </Route>
                         <Route path="/journal/">
                             <Route path="special-project" element={<Journal/>}/>
                             <Route path="lookst" element={<Journal/>}/>

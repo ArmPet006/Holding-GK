@@ -1,25 +1,27 @@
-import React, { FC } from "react";
-import HeroesCard from "../../Components/HeroCard/hero-card";
+import React, {FC} from "react";
 
-const Heroes: FC<any> = () => {
-	const arr = Array(10).fill({
-		image: undefined,
-		title: "Heading",
-		description:
-			"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deleniti voluptatibus velit sint obcaecati voluptatem sequi, suscipit deserunt! Maxime aliquam, est harum, fuga possimus quos saepe nam nostrum tempore a nemo?",
-	});
-	return (
-		<div className="heroes_container">
-			{arr.map((element, index) => (
-				<HeroesCard
-					key={index}
-					image={element.image}
-					title={element.title}
-					description={element.description}
-				/>
-			))}
-		</div>
-	);
+import HeroCard from "../../Components/HeroCard/hero-card";
+import TestImage from "../../../public/assets/images/image.jpg";
+
+const HeroesList: FC<any> = () => {
+    const arr = Array(10).fill({
+        image: TestImage,
+        name: "Artur Petrosyan",
+        label:
+            "Programmer",
+    });
+    return (
+        <div className="heroes_list">
+            {arr.map((element, index) => (
+                <HeroCard
+                    key={index}
+                    image={element.image}
+                    name={element.name}
+                    label={element.label}
+                />
+            ))}
+        </div>
+    );
 };
 
-export default Heroes;
+export default HeroesList;

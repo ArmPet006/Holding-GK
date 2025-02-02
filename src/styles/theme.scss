@@ -16,3 +16,10 @@ $inactive-link-dark: #ffffff;
 
 $lovers-quarrel: "Lovers Quarrel", cursive;
 $arsenal-sc: "Arsenal SC", serif;
+
+@font-face {
+	font-family: 'Moniqa';
+	src: url('../../public/assets/fonts/moniqa.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}

@@ -1,14 +1,14 @@
 import React, {FC, useContext} from "react";
 import {NavLink} from "react-router-dom";
 
-import Logo from "../../assets/icons/navbar/navbar-logo.png";
-import HomeIcon from "../../assets/icons/navbar/home-icon.png";
-import HeroesIcon from "../../assets/icons/navbar/heroes-icon.png";
-import JournalIcon from "../../assets/icons/navbar/journal-icon.png";
-import AdsIcon from "../../assets/icons/navbar/ads-icon.png";
-import ContactIcon from "../../assets/icons/navbar/contact-icon.png";
-import SunIcon from "../../assets/icons/navbar/sun.png";
-import MoonIcon from "../../assets/icons/navbar/moon.png";
+import Logo from "../../../public/assets/icons/navbar/navbar-logo.png";
+import HomeIcon from "../../../public/assets/icons/navbar/home-icon.png";
+import HeroesIcon from "../../../public/assets/icons/navbar/heroes-icon.png";
+import JournalIcon from "../../../public/assets/icons/navbar/journal-icon.png";
+import AdsIcon from "../../../public/assets/icons/navbar/ads-icon.png";
+import ContactIcon from "../../../public/assets/icons/navbar/contact-icon.png";
+import SunIcon from "../../../public/assets/icons/navbar/sun.png";
+import MoonIcon from "../../../public/assets/icons/navbar/moon.png";
 
 import {ThemeContext} from "../../Contexts/theme-context.tsx";
 

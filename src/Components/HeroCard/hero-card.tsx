@@ -1,33 +1,29 @@
-import React, { FC } from "react";
-import Button from "../UI/Button/button";
+import React, {FC} from "react";
+import {Link} from "react-router-dom";
+import Arrow from "../../Helpers/Svg/arrow.tsx";
 
 import "./hero-card.scss";
 
 interface Props {
-	image: string | undefined;
-	title: string;
-	description: string;
+    image: string | undefined;
+    name: string;
+    label: string;
 };
 
-const HeroesCard: FC<Props> = ({ image, title, description }) => {
-	return (
-		<div className="heroes_card">
-			<div className="heroes_card_heading">
-				<div className="heroes_card_logo"></div>
-				<div className="heroes_card_title">{title}</div>
-				<div className="heroes_card_icons">
-					<button className="heroes_card_icon"></button>
-					<button className="heroes_card_icon"></button>
-					<button className="heroes_card_icon"></button>
-					<button className="heroes_card_icon"></button>
-				</div>
-			</div>
-			<div className="heroes_card_description">
-				<p>{description}</p>
-				<Button>Read More</Button>
-			</div>
-		</div>
-	);
+const HeroCard: FC<Props> = ({image, name, label}) => {
+    return (
+        <div className="hero_card">
+            <img src={image} alt=""/>
+            <h3>{name}</h3>
+
+            <div className="info_container">
+                <p>{label}</p>
+                <Link to={`hero/${name}`}>
+                    <Arrow size={25}/>
+                </Link>
+            </div>
+        </div>
+    );
 };
 
-export default HeroesCard;
+export default HeroCard;
