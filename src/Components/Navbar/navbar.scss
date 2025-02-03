@@ -1,210 +1,204 @@
 @use "../../styles/theme.scss" as *;
 
 @mixin icon-theme($light-theme) {
-	@if $light-theme {
-		img {
-			&[icon-name="home"] {
-				content: url("../../../public/assets/icons/navbar/light-active/home-icon.png");
-			}
-			&[icon-name="heroes"] {
-				content: url("../../../public/assets/icons/navbar/light-active/heroes-icon.png");
-			}
-			&[icon-name="journal"] {
-				content: url("../../../public/assets/icons/navbar/light-active/journal-icon.png");
-			}
-			&[icon-name="ads"] {
-				content: url("../../../public/assets/icons/navbar/light-active/ads-icon.png");
-			}
-			&[icon-name="contacts"] {
-				content: url("../../../public/assets/icons/navbar/light-active/contact-icon.png");
-			}
-		}
-	} @else {
-		img {
-			&[icon-name="home"] {
-				content: url("../../../public/assets/icons/navbar/dark-active/home-icon.png");
-			}
-			&[icon-name="heroes"] {
-				content: url("../../../public/assets/icons/navbar/dark-active/heroes-icon.png");
-			}
-			&[icon-name="journal"] {
-				content: url("../../../public/assets/icons/navbar/dark-active/journal-icon.png");
-			}
-			&[icon-name="ads"] {
-				content: url("../../../public/assets/icons/navbar/dark-active/ads-icon.png");
-			}
-			&[icon-name="contacts"] {
-				content: url("../../../public/assets/icons/navbar/dark-active/contact-icon.png");
-			}
-		}
-	}
+  @if $light-theme {
+    img {
+      &[icon-name="home"] {
+        content: url("../../../public/assets/icons/navbar/light-active/home-icon.png");
+      }
+
+      &[icon-name="heroes"] {
+        content: url("../../../public/assets/icons/navbar/light-active/heroes-icon.png");
+      }
+
+      &[icon-name="journal"] {
+        content: url("../../../public/assets/icons/navbar/light-active/journal-icon.png");
+      }
+
+      &[icon-name="ads"] {
+        content: url("../../../public/assets/icons/navbar/light-active/ads-icon.png");
+      }
+
+      &[icon-name="contacts"] {
+        content: url("../../../public/assets/icons/navbar/light-active/contact-icon.png");
+      }
+    }
+  } @else {
+    img {
+      &[icon-name="home"] {
+        content: url("../../../public/assets/icons/navbar/dark-active/home-icon.png");
+      }
+
+      &[icon-name="heroes"] {
+        content: url("../../../public/assets/icons/navbar/dark-active/heroes-icon.png");
+      }
+
+      &[icon-name="journal"] {
+        content: url("../../../public/assets/icons/navbar/dark-active/journal-icon.png");
+      }
+
+      &[icon-name="ads"] {
+        content: url("../../../public/assets/icons/navbar/dark-active/ads-icon.png");
+      }
+
+      &[icon-name="contacts"] {
+        content: url("../../../public/assets/icons/navbar/dark-active/contact-icon.png");
+      }
+    }
+  }
 }
 
 @mixin navbar-theme($light-theme) {
-	@if $light-theme {
-		background: $navbar-light-bg;
+  @if $light-theme {
+    background: $navbar-light-bg;
 
-		a {
-			color: $inactive-link-light;
+    a {
+      color: $inactive-link-light;
 
-			span {
-				color: $active-link-light;
-			}
+      span {
+        color: $active-link-light;
+      }
 
-			&.active {
-				color: $active-link-light;
-				@include icon-theme($light-theme: true);
-			}
+      &.active {
+        color: $active-link-light;
+        @include icon-theme($light-theme: true);
+      }
 
-			&::before {
-				background: $active-link-light;
-			}
+      &::before {
+        background: $active-link-light;
+      }
 
-			&:hover {
-				color: $active-link-light;
-			}
-		}
-	} @else {
-		background: $navbar-dark-bg;
+      &:hover {
+        color: $active-link-light;
+      }
+    }
+  } @else {
+    background: $navbar-dark-bg;
 
-		a {
-			color: $inactive-link-dark;
+    a {
+      color: $inactive-link-dark;
 
-			span {
-				color: $active-link-dark;
-			}
+      span {
+        color: $active-link-dark;
+      }
 
-			&.active {
-				color: $active-link-dark;
-				@include icon-theme($light-theme: false);
-			}
+      &.active {
+        color: $active-link-dark;
+        @include icon-theme($light-theme: false);
+      }
 
-			&::before {
-				background: $active-link-dark;
-			}
+      &::before {
+        background: $active-link-dark;
+      }
 
-			&:hover {
-				color: $active-link-dark;
-			}
-		}
-	}
+      &:hover {
+        color: $active-link-dark;
+      }
+    }
+  }
 }
 
 .navbar {
-	width: 10vw;
-	height: 100vh;
-	display: flex;
-	align-items: flex-start;
-	justify-content: flex-start;
-	flex-direction: column;
-	position: fixed;
-	padding: 30px 0;
-	box-sizing: border-box;
-	transition: 0.5s;
-	overflow: hidden;
-	z-index: 9;
+  width: 10vw;
+  height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  position: fixed;
+  padding: 30px 0;
+  box-sizing: border-box;
+  transition: 0.5s;
+  overflow: hidden;
+  z-index: 9;
 
-	@include navbar-theme($light-theme: true);
+  @include navbar-theme($light-theme: true);
 
-	&.dark {
-		@include navbar-theme($light-theme: false);
-	}
+  &.dark {
+    @include navbar-theme($light-theme: false);
+  }
 
-	&:hover {
-		width: 18vw;
-		transition: 0.4s;
+  &:hover {
+    width: 18vw;
+    transition: 0.4s;
 
-		.wrapper {
-			.main_links {
-				a::after {
-					opacity: 1;
-					transition: 0.5s;
-				}
-			}
-		}
-	}
+    .wrapper {
+      .main_links {
+        a::after {
+          opacity: 1;
+          transition: 0.5s;
+        }
+      }
+    }
+  }
 
-	.wrapper {
-		width: calc(100vw * 10 / 100);
-		height: 100%;
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		flex-direction: column;
+  .wrapper {
+    width: calc(100vw * 10 / 100);
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
 
-		.theme_toggle {
-			width: 35px;
-			height: 35px;
-			background: transparent;
-			border: none;
-			cursor: pointer;
-
-			img {
-				width: 100%;
-			}
-		}
-	}
+    .theme_toggle {
+      width: 35px;
+      height: 35px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+    }
+  }
 }
 
 .logo {
-	width: 70px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-
-	img {
-		width: 100%;
-		height: 100%;
-	}
+  width: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .main_links {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	flex-direction: column;
-	gap: 40px;
-	list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 40px;
+  list-style: none;
 
-	a {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		font-family: $arsenal-sc;
-		font-weight: 400;
-		font-size: 18px;
-		line-height: 30px;
-		cursor: pointer;
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: $arsenal-sc;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 30px;
+    cursor: pointer;
 
-		&::after {
-			content: attr(page-name);
-			display: block;
-			position: absolute;
-			left: 120px;
-			opacity: 0;
-			transition: 0.2s;
-		}
+    &::after {
+      content: attr(page-name);
+      display: block;
+      position: absolute;
+      left: 120px;
+      opacity: 0;
+      transition: 0.2s;
+    }
 
-		&.active {
-			&::before {
-				content: "";
-				width: 3px;
-				height: 35px;
-				display: block;
-				position: absolute;
-				right: 5px;
-				border-radius: 10px;
-			}
-		}
+    &.active {
+      &::before {
+        content: "";
+        width: 3px;
+        height: 35px;
+        display: block;
+        position: absolute;
+        right: 5px;
+        border-radius: 10px;
+      }
+    }
 
-		span {
-			font-size: 45px;
-			font-family: $lovers-quarrel;
-		}
-
-		.icon {
-			width: 35px;
-			height: 35px;
-		}
-	}
+    span {
+      font-size: 45px;
+      font-family: $lovers-quarrel;
+    }
+  }
 }

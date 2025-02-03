@@ -1,12 +1,57 @@
 @use './theme.scss' as *;
 
 .read_more_btn {
-	margin-top: 15px;
-	padding: 8px 22px;
-	border-radius: 14px;
-	font-family: $lovers-quarrel;
-	color: $active-link-light;
-	border: 1px solid $active-link-light;
-	cursor: pointer;
-	background-color: transparent;
+  background: transparent;
+  border-radius: 10px;
+  font-size: 20px;
+  font-family: $moniqa;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+
+  &.dark {
+    border: 1px solid $black;
+    color: $black;
+
+    svg {
+      path {
+        fill: $black;
+      }
+    }
+
+    &.filled {
+      background: $black;
+      color: $gold;
+
+      svg {
+        path {
+          fill: $gold;
+        }
+      }
+    }
+  }
+
+  &.light {
+    border: 1px solid $gold;
+    color: $gold;
+
+    svg {
+      path {
+        fill: $gold;
+      }
+    }
+
+    &.filled {
+      background: $gold;
+      color: $black;
+
+      svg {
+        path {
+          fill: $black;
+        }
+      }
+    }
+  }
 }

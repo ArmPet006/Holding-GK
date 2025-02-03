@@ -1,7 +1,7 @@
 import React, {FC} from "react";
 
-import HeroCard from "../../Components/HeroCard/hero-card";
-import TestImage from "../../../public/assets/images/image.jpg";
+import HeroCard from "@/Components/HeroCard/hero-card";
+import TestImage from "@/../public/assets/images/image.jpg";
 
 const HeroesList: FC<any> = () => {
     const arr = Array(10).fill({
@@ -10,6 +10,7 @@ const HeroesList: FC<any> = () => {
         label:
             "Programmer",
     });
+
     return (
         <div className="heroes_list">
             {arr.map((element, index) => (

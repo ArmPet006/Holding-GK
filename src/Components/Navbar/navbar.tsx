@@ -1,5 +1,8 @@
-import React, {FC, useContext} from "react";
-import {NavLink} from "react-router-dom";
+"use client";
+
+import {FC, useContext} from "react";
+import NavLink from "./navlink.tsx";
+import Image from "next/image";
 
 import Logo from "../../../public/assets/icons/navbar/navbar-logo.png";
 import HomeIcon from "../../../public/assets/icons/navbar/home-icon.png";
@@ -10,7 +13,7 @@ import ContactIcon from "../../../public/assets/icons/navbar/contact-icon.png";
 import SunIcon from "../../../public/assets/icons/navbar/sun.png";
 import MoonIcon from "../../../public/assets/icons/navbar/moon.png";
 
-import {ThemeContext} from "../../Contexts/theme-context.tsx";
+import {ThemeContext} from "@/Contexts/theme-context.tsx";
 
 import "./navbar.scss";
 
@@ -21,46 +24,52 @@ const Navbar: FC<any> = () => {
         <nav className={`navbar ${theme}`}>
             <div className="wrapper">
                 <div className="logo">
-                    <img src={Logo} alt="logo"/>
+                    <Image width={70} src={Logo} alt="logo"/>
                 </div>
-                <ul className="main_links">
-                    <NavLink to="/" page-name="Главная">
-                        <img className="icon" src={HomeIcon} icon-name="home" alt="icon"/>
+                <div className="main_links">
+                    <NavLink href="/" pageName="Главная">
+                        <Image width={35} height={35} className="icon" src={HomeIcon} icon-name="home" alt="icon"/>
                     </NavLink>
-                    <NavLink to="/heroes" page-name="Герои">
-                        <img
+                    <NavLink href="/heroes" pageName="Герои">
+                        <Image
+                            width={35}
+                            height={35}
                             className="icon"
                             src={HeroesIcon}
                             icon-name="heroes"
                             alt="icon"
                         />
                     </NavLink>
-                    <NavLink to="/journal" page-name="Журнал">
-                        <img
+                    <NavLink href="/journal" pageName="Журнал">
+                        <Image
+                            width={35}
+                            height={35}
                             className="icon"
                             src={JournalIcon}
                             icon-name="journal"
                             alt="icon"
                         />
                     </NavLink>
-                    <NavLink to="/advertisers" page-name="Рекламодателям">
-                        <img className="icon" src={AdsIcon} icon-name="ads" alt="icon"/>
+                    <NavLink href="/advertisers" pageName="Рекламодателям">
+                        <Image width={35} height={35} className="icon" src={AdsIcon} icon-name="ads" alt="icon"/>
                     </NavLink>
                     <a href="#" page-name="Карине">
                         <span>K</span>
                     </a>
-                    <NavLink to="/contacts" page-name="Контакты">
-                        <img
+                    <NavLink href="/contacts" pageName="Контакты">
+                        <Image
+                            width={35}
+                            height={35}
                             className="icon"
                             src={ContactIcon}
                             icon-name="contacts"
                             alt="icon"
                         />
                     </NavLink>
-                </ul>
+                </div>
 
                 <button className="theme_toggle" onClick={() => changeTheme()}>
-                    <img src={theme === "light" ? MoonIcon : SunIcon} alt="theme_icon"/>
+                    <Image width={35} height={35} src={theme === "light" ? MoonIcon : SunIcon} alt="theme_icon"/>
                 </button>
             </div>
         </nav>

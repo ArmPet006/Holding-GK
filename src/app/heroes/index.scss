@@ -1,0 +1,8 @@
+@use '@/styles/theme' as *;
+
+.heroes_list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 100px;
+}

@@ -1,5 +1,7 @@
+"use client";
+
 import React, {FC, useState, ReactNode} from 'react';
-import {ThemeContext, Theme} from '../Contexts/theme-context.tsx';
+import {ThemeContext, Theme} from '@/Contexts/theme-context.tsx';
 
 interface Props {
     children: ReactNode;
