@@ -53,9 +53,6 @@ const Navbar: FC<any> = () => {
                     <NavLink href="/advertisers" pageName="Рекламодателям">
                         <Image width={35} height={35} className="icon" src={AdsIcon} icon-name="ads" alt="icon"/>
                     </NavLink>
-                    <a href="#" page-name="Карине">
-                        <span>K</span>
-                    </a>
                     <NavLink href="/contacts" pageName="Контакты">
                         <Image
                             width={35}
@@ -66,6 +63,9 @@ const Navbar: FC<any> = () => {
                             alt="icon"
                         />
                     </NavLink>
+                    <a href="#" page-name="Карине">
+                        <span>K</span>
+                    </a>
                 </div>
 
                 <button className="theme_toggle" onClick={() => changeTheme()}>

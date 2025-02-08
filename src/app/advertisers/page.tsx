@@ -11,7 +11,7 @@ const Advertisers = () => {
 
     return (
         <>
-            <h2 className={`page-title ${theme}`}>Рекламодателям</h2>
+            <h2 className={`page_title ${theme}`}>Рекламодателям</h2>
             <AdvertisersList/>
         </>
     )

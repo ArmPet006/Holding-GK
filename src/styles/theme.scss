@@ -1,7 +1,8 @@
-:root {
-	--Card-Border-color: #315659;
-	--Card-Text-color: #253031;
-	--Heroes-Card-Background-color: #fbfbfb;
+@font-face {
+  font-family: 'Moniqa';
+  src: url('../../public/fonts/moniqa.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
 
 $navbar-light-bg: #f0eee2;
@@ -23,10 +24,3 @@ $light-gray: #50535A;
 $lovers-quarrel: "Lovers Quarrel", cursive;
 $arsenal-sc: "Arsenal SC", serif;
 $moniqa: "Moniqa", serif;
-
-@font-face {
-	font-family: 'Moniqa';
-	src: url('../../public/assets/fonts/moniqa.ttf') format('truetype');
-	font-weight: normal;
-	font-style: normal;
-}

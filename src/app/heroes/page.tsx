@@ -12,7 +12,7 @@ const Heroes = () => {
 
     return (
         <>
-            <h2 className={`page-title ${theme}`}>Герои</h2>
+            <h2 className={`page_title ${theme}`}>Герои</h2>
             <HeroesList/>
         </>
     )
