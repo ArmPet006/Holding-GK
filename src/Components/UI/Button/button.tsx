@@ -3,7 +3,7 @@ import "@/styles/theme.scss";
 
 interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
     width: number | string;
-    height: number;
+    height: number | string;
     theme: Theme
 }
 

@@ -15,6 +15,10 @@
         content: url("../../../public/assets/icons/navbar/light-active/journal-icon.png");
       }
 
+      &[icon-name="club"] {
+        content: url("../../../public/assets/icons/navbar/light-active/club-icon.png");
+      }
+
       &[icon-name="ads"] {
         content: url("../../../public/assets/icons/navbar/light-active/ads-icon.png");
       }
@@ -35,6 +39,10 @@
 
       &[icon-name="journal"] {
         content: url("../../../public/assets/icons/navbar/dark-active/journal-icon.png");
+      }
+
+      &[icon-name="club"] {
+        content: url("../../../public/assets/icons/navbar/dark-active/club-icon.png");
       }
 
       &[icon-name="ads"] {
@@ -124,7 +132,7 @@
 
     .wrapper {
       .main_links {
-        a::after {
+        a span:not(.external_link) {
           opacity: 1;
           transition: 0.5s;
         }
@@ -141,20 +149,30 @@
     flex-direction: column;
 
     .theme_toggle {
-      width: 35px;
-      height: 35px;
+      width: 2.083rem;
+      height: 2.083rem;
       background: transparent;
       border: none;
       cursor: pointer;
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
     }
   }
 }
 
 .logo {
-  width: 70px;
+  width: 3.75rem;
   display: flex;
   align-items: center;
   justify-content: center;
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
 }
 
 .main_links {
@@ -162,8 +180,12 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  gap: 40px;
-  list-style: none;
+  gap: 1.667rem;
+
+  img {
+    width: 2.083rem;
+    height: 2.083rem;
+  }
 
   a {
     display: flex;
@@ -171,15 +193,14 @@
     justify-content: center;
     font-family: $arsenal-sc;
     font-weight: 400;
-    font-size: 18px;
-    line-height: 30px;
+    font-size: 1.083rem;
     cursor: pointer;
 
-    &::after {
+    & span:not(.external_link) {
       content: attr(page-name);
       display: block;
       position: absolute;
-      left: 120px;
+      left: 6rem;
       opacity: 0;
       transition: 0.2s;
     }
@@ -196,8 +217,8 @@
       }
     }
 
-    span {
-      font-size: 45px;
+    .external_link {
+      font-size: 2.708rem;
       font-family: $lovers-quarrel;
     }
   }

@@ -25,11 +25,11 @@ export default function RootLayout({children}: { children: React.ReactNode }) {
             />
         </head>
         <body>
-        <div id="root">
+        <main id="root">
             <Providers>
                 {children}
             </Providers>
-        </div>
+        </main>
         </body>
         </html>
     )

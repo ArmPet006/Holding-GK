@@ -4,8 +4,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 100px;
+  gap: 6.25rem;
   position: relative;
+  overflow: visible;
 
   &.dark {
     hr, span:not(ul span) {
@@ -66,7 +67,7 @@
       flex-direction: column;
       align-items: flex-start;
       justify-content: space-between;
-      padding-right: 70px;
+      padding-right: 2.958rem;
       box-sizing: border-box;
     }
 
@@ -75,13 +76,13 @@
       flex-direction: column;
       align-items: flex-start;
       justify-content: center;
-      gap: 30px;
-      padding-left: 70px;
+      gap: 1.667rem;
+      padding-left: 3.833rem;
       box-sizing: border-box;
 
       h4 {
         color: $black;
-        font-size: 32px;
+        font-size: 1.667rem;
         font-family: $moniqa;
 
         &.dark {
@@ -96,7 +97,7 @@
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    gap: 20px;
+    gap: 1.25rem;
 
     &.dark {
       li {
@@ -109,14 +110,14 @@
     }
 
     li {
-      font-size: 28px;
+      font-size: 1.667rem;
       font-family: $moniqa;
       color: $black;
 
       span {
         display: block;
-        font-size: 24px;
-        margin-bottom: 10px;
+        font-size: 1.5rem;
+        margin-bottom: 0.417rem;
       }
     }
   }
@@ -128,7 +129,7 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  gap: 30px;
+  gap: 1.667rem;
 
   &.dark {
     h3 {
@@ -148,14 +149,14 @@
   h3 {
     font-family: $moniqa;
     color: $black;
-    font-size: 32px;
+    font-size: 1.667rem;
   }
 
   form {
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 1.25rem;
 
     input, textarea {
       outline: none;
@@ -164,13 +165,13 @@
       border: none;
       color: $black;
       font-family: $moniqa;
-      font-size: 24px;
+      font-size: 1.333rem;
       border-bottom: 1px solid $black;
 
       &::placeholder {
         color: $black;
         font-family: $moniqa;
-        font-size: 24px;
+        font-size: 1.333rem;
       }
     }
 

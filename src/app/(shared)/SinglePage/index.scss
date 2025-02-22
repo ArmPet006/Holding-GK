@@ -1,0 +1,95 @@
+@use "@/styles/theme" as *;
+
+.single_hero_container {
+  width: 100%;
+  overflow-y: visible;
+  display: flex;
+  flex-direction: column;
+  padding-right: 4.75rem;
+
+  &.dark {
+    .icon_container {
+      svg {
+        path {
+          fill: white;
+        }
+      }
+    }
+
+    .block {
+      h2 {
+        color: $gold;
+      }
+
+      p {
+        color: white;
+      }
+    }
+  }
+
+  .icon_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.667rem;
+    position: fixed;
+    right: 30px;
+    top: 0;
+    bottom: 0;
+
+    a {
+      cursor: pointer;
+    }
+
+    svg {
+      width: 1.458rem;
+      height: 1.458rem;
+    }
+  }
+
+  .view {
+    width: 100%;
+    height: calc(100vh - 120px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .block {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5.458rem;
+
+    h2 {
+      width: fit-content;
+      color: $blue;
+      font-family: $moniqa;
+      font-size: 4rem;
+      margin-bottom: 1.292rem;
+    }
+
+    p {
+      color: $gray;
+      font-family: $arsenal-sc;
+      font-size: 1.333rem;
+      font-weight: bold;
+    }
+
+    img {
+      width: 19.583rem;
+      height: 25rem;
+      box-shadow: $image-shadow;
+    }
+  }
+
+  .info_container {
+    p {
+      font-weight: normal;
+      height: 10.417rem;
+      overflow: auto;
+      padding: 3.33rem 20px 20px 0;
+    }
+  }
+}

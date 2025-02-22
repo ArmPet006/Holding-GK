@@ -1,24 +1,18 @@
-import {FC, useContext} from "react";
-import Image from "next/image";
+import {FC} from "react";
 
-import {ThemeContext} from "@/Contexts/theme-context.tsx";
-import Button, {Theme} from "@/Components/UI/Button/button.tsx";
-import Arrow from "@/Helpers/Svg/arrow.tsx";
-import BookBackdrop from "@/../public/assets/images/book-backdrop-small.svg";
 import {Topic} from "@/app/journal/page.tsx";
 
-import './journal-tab-item.scss';
+import ListItem from "@/Components/ListItem/list-item.tsx";
 
 interface Props {
     image: string;
     title: string;
     description: string;
     setFeaturedTopic: (topic: Topic) => void;
+    onButtonClick?: () => void;
 }
 
-const JournalTabItem: FC<Props> = ({image, title, description, setFeaturedTopic}) => {
-    const {theme} = useContext(ThemeContext);
-
+const JournalTabItem: FC<Props> = ({image, title, description, setFeaturedTopic, onButtonClick}) => {
     const setTopic = () => {
         setFeaturedTopic({
             title,
@@ -28,20 +22,7 @@ const JournalTabItem: FC<Props> = ({image, title, description, setFeaturedTopic}
     }
 
     return (
-        <div className="tab_item_container">
-            <div className="image_container" onClick={setTopic}>
-                <Image className="cover" src={image} alt=""/>
-                <Image className="backdrop" src={BookBackdrop} alt=""/>
-            </div>
-
-            <div className="action_container">
-                <h3 className={theme}>{title}</h3>
-                <Button width={140} height={35} theme={theme === "light" ? Theme.dark : Theme.light}>
-                    Узнать больше
-                    <Arrow size={15}/>
-                </Button>
-            </div>
-        </div>
+        <ListItem image={image} title={title} onClick={setTopic} onButtonClick={onButtonClick}/>
     )
 }
 export default JournalTabItem

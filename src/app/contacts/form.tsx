@@ -19,17 +19,18 @@ const Form: FC<Props> = ({theme}) => {
 
             <Button
                 className="filled"
-                width={180}
-                height={37}
+                width={"11.333rem"}
+                height={"2.292rem"}
                 theme={theme === "light" ? Theme.dark : Theme.light}
                 style={{
                     justifyContent: "flex-end",
                     paddingRight: 10,
-                    gap: 35
+                    gap: "2.083rem",
+                    fontSize: '1.5rem'
                 }}
             >
                 Отправить
-                <Arrow size={15}/>
+                <Arrow size={"1.25rem"}/>
             </Button>
         </div>
     )

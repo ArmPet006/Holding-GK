@@ -20,8 +20,8 @@ const HeroCard: FC<Props> = ({image, name, label}) => {
 
             <div className="info_container">
                 <p>{label}</p>
-                <Link href={`hero/${name}`}>
-                    <Arrow size={25}/>
+                <Link href={`/heroes/${name.split(" ").join("")}`}>
+                    <Arrow size={"1.875rem"}/>
                 </Link>
             </div>
         </div>

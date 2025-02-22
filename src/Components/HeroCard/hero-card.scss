@@ -1,13 +1,13 @@
 @use '../../styles/theme.scss' as *;
 
 .hero_card {
-  width: 275px;
-  height: 350px;
+  width: 19.583rem;
+  height: 25rem;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
-  box-shadow: -30px -10px 25px 5px rgba(0, 0, 0, 0.35);
+  box-shadow: $image-shadow;
 
   .info_container {
     visibility: hidden;
@@ -20,12 +20,12 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 20px;
+    padding: 0 0.833rem;
     box-sizing: border-box;
 
     p {
       color: white;
-      font-size: 28px;
+      font-size: 1.667rem;
       font-family: 'Moniqa', serif;
     }
 
@@ -60,9 +60,9 @@
 
   h3 {
     position: absolute;
-    left: 10px;
+    left: 0.417rem;
     bottom: 20px;
-    font-size: 56px;
+    font-size: 4rem;
     color: white;
     transition: 0.3s;
     font-family: 'Moniqa', serif;

@@ -1,9 +1,59 @@
-.advertisers_list {
-	width: 100%;
-	height: 100%;
-	display: flex;
-	flex-wrap: wrap;
-	align-items: center;
-	box-sizing: border-box;
-	gap: 50px;
+@use "@/styles/theme" as *;
+
+.advertisers_container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 2.708rem;
+
+  &.dark {
+    h2 {
+      color: $gold;
+    }
+
+    .advertisers_card {
+      background: rgba(255, 255, 255, 0.04);
+      box-shadow: 0 0 3px 0 rgba(255, 255, 255, 0.1) inset;
+
+      .advertisers_card_description {
+        .advertisers_card_title, .advertisers_card_price {
+          color: $white;
+        }
+      }
+    }
+
+    svg {
+      path {
+        stroke: rgba(210, 183, 138, 0.3);
+      }
+    }
+  }
+
+  h2 {
+    align-self: flex-start;
+  }
+
+  svg:not(button svg) {
+    position: absolute;
+    height: 100vh;
+    transform: rotateZ(30deg);
+    top: 5rem;
+    left: 15.5rem;
+
+    path {
+      stroke: rgba(20, 23, 28, 0.3);
+    }
+  }
+
+  .advertisers_list {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    box-sizing: border-box;
+    gap: 5rem;
+  }
 }
+

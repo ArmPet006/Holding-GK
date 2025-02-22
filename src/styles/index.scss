@@ -6,24 +6,23 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  user-select: none;
 }
 
 ::-webkit-scrollbar {
-  width: 10px;
-}
-
-::-webkit-scrollbar-track {
-  background-color: #b1acac;
-  border-radius: 1rem;
+  width: 7px;
+  height: 7px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #888;
-  border-radius: 1rem;
+  background: $black;
+  border-radius: 10px;
 }
 
-::-webkit-scrollbar-track:hover {
-  background-color: #555;
+::-webkit-scrollbar-track {
+  background: $light-gray;
+  margin: 33vh 33vw;
+  border-radius: 10px;
 }
 
 .container {
@@ -32,24 +31,97 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  box-sizing: border-box;
-  padding: 70px 100px;
+  padding: 4.208rem 0 4.208rem 0;
   background: $bg-light;
   transition: background 0.5s;
   margin-left: 10vw;
-  gap: 50px;
+  gap: 4.833rem;
+  overflow: hidden;
 
   &.dark {
     background: $bg-dark;
+
+    ::-webkit-scrollbar-thumb {
+      background: $gold;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: $light-gray;
+    }
+
+    .back_button {
+      svg {
+        path {
+          fill: $gold;
+        }
+      }
+    }
   }
 
   .page_title {
-    font-family: 'Moniqa', serif;
-    font-size: 55px;
+    font-family: $moniqa;
+    font-size: 4rem;
     color: $active-link-light;
 
     &.dark {
       color: $active-link-dark;
     }
+  }
+
+  .back_button {
+    position: absolute;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+
+    svg {
+      transform: rotateZ(180deg);
+
+      path {
+        fill: $black;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  :root {
+    font-size: 8px;
+  }
+}
+
+@media only screen and (min-width: 641px) {
+  :root {
+    font-size: 10px;
+  }
+}
+
+@media only screen and (min-width: 769px) {
+  :root {
+    font-size: 12px;
+  }
+}
+
+@media only screen and (min-width: 1025px) {
+  :root {
+    font-size: 14px;
+  }
+}
+
+@media only screen and (min-width: 1281px) {
+  :root {
+    font-size: 16px;
+  }
+}
+
+@media only screen and (min-width: 1441px) {
+  :root {
+    font-size: 18px;
+  }
+}
+
+@media only screen and (min-width: 1681px) {
+  :root {
+    font-size: 24px;
   }
 }

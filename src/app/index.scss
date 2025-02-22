@@ -1,0 +1,183 @@
+@use '@/styles/theme' as *;
+
+.home_container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+
+  &.dark {
+    .hero_section {
+      svg {
+        path {
+          stroke: rgba(210, 183, 138, 0.3);
+        }
+      }
+
+      h1 {
+        color: $white;
+
+        span {
+          color: $gold;
+        }
+      }
+
+    }
+
+    .page_slider {
+      h3 {
+        color: $gold;
+      }
+
+      .slide {
+        .slide_button_container {
+          .slide_button {
+            border-color: $gold;
+
+            svg {
+              path {
+                fill: $gold;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.hero_section {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
+
+  svg:not(.projects_list svg) {
+    position: absolute;
+    height: 100vh;
+    transform: rotateZ(30deg);
+    top: 4rem;
+    left: 5.556rem;
+    filter: blur(5px);
+
+    path {
+      stroke: rgba(20, 23, 28, 0.3);
+    }
+  }
+
+  h1 {
+    font-size: 15rem;
+    font-family: $moniqa;
+    text-align: right;
+    color: $black;
+    margin-top: 4rem;
+    position: relative;
+    z-index: 1;
+
+    span {
+      color: #CFA446;
+    }
+  }
+}
+
+.projects_list {
+  height: 100vh;
+  position: relative;
+  top: -2.104rem;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5rem;
+  overflow-y: scroll;
+  margin-right: 1.25rem;
+  padding: 100% 3.292rem 100% 0;
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+  box-sizing: border-box;
+
+  &::-webkit-scrollbar-track {
+    margin: 80vw 0;
+  }
+
+  .hero_project_item {
+    gap: 1.25rem;
+    scroll-snap-align: center;
+
+    .book {
+      width: 11.5rem;
+      height: 14.292rem;
+    }
+
+    .text_container {
+      h3 {
+        font-size: 2.917rem;
+
+        &.dark {
+          color: $white;
+        }
+      }
+
+      button {
+        font-size: 1.667rem;
+      }
+    }
+  }
+}
+
+.page_slider {
+  width: 100%;
+  padding-top: 1.25rem;
+  display: flex;
+  overflow-x: hidden;
+
+  .slide {
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2.083rem;
+    flex: 0 0 100%;
+    overflow: hidden;
+    position: relative;
+
+    .slide_button_container {
+      position: absolute;
+      right: 1.667rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+
+      .prev {
+        transform: rotateZ(180deg);
+      }
+
+      .slide_button {
+        width: 3.333rem;
+        height: 3.333rem;
+        border: 2px solid $black;
+        background: transparent;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+
+        svg {
+          path {
+            fill: $black;
+          }
+        }
+      }
+    }
+
+    h3 {
+      font-size: 4rem;
+      font-family: $moniqa;
+      color: $black;
+    }
+  }
+}

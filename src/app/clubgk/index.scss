@@ -1,0 +1,120 @@
+@use "@/styles/theme" as *;
+
+.club_container {
+  display: flex;
+  flex-direction: column;
+  gap: 10rem;
+
+  .section {
+    display: flex;
+    flex-direction: column;
+    gap: 4.167rem;
+    padding-right: 4.792rem;
+
+    &:nth-child(2) {
+      gap: 2.917rem;
+    }
+
+    &:nth-child(3) { //4 later
+      gap: 2.083rem;
+    }
+
+    .first_section_container {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+
+      .first_list {
+        max-width: 25.458rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        li {
+          font-size: 1.333rem;
+          font-family: $arsenal-sc;
+
+          span {
+            font-size: 2rem;
+            font-family: $moniqa;
+          }
+        }
+      }
+
+      p {
+        max-width: 29.75rem;
+        font-size: 1.5rem;
+        font-family: $arsenal-sc;
+      }
+
+      .second_list {
+        display: flex;
+        flex-direction: column;
+        list-style-type: disc;
+        max-width: 21.625rem;
+        margin-left: 1.5rem;
+        margin-top: 1rem;
+
+        li {
+          font-size: 1.333rem;
+          font-family: $arsenal-sc;
+        }
+      }
+    }
+
+    .second_section_container {
+      display: flex;
+      flex-direction: column;
+      gap: 2.417rem;
+
+      h3 {
+        font-size: 2.667rem;
+        font-family: $moniqa;
+      }
+
+      ul {
+        max-width: 54.917rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        list-style-type: disc;
+        margin-left: 3.667rem;
+
+        li {
+          font-size: 1.5rem;
+          font-family: $arsenal-sc;
+        }
+      }
+    }
+
+    .fourth_section_container {
+      display: flex;
+      flex-direction: column;
+      gap: 2.417rem;
+
+      h3 {
+        font-size: 2.667rem;
+        font-family: $moniqa;
+      }
+
+      h4 {
+        font-size: 1.6rem;
+        font-family: $moniqa;
+      }
+
+      ul {
+        max-width: 54.917rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        list-style-type: disc;
+        margin-left: 3rem;
+
+        li {
+          font-size: 1.667rem;
+          font-family: $moniqa;
+        }
+      }
+    }
+  }
+}

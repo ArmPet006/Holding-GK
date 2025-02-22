@@ -12,7 +12,8 @@ interface Props {
 const NavLink: FC<Props> = ({href, pageName, children}) => {
     const path: string = usePathname();
 
-    const isActive: string = path === href ? "active" : "";
+    const isActive: string = path === href || (path.includes(href) && href !== "/")
+        ? "active" : "";
 
     return (
         <Link className={isActive} href={href} page-name={pageName}>

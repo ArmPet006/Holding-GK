@@ -1,0 +1,19 @@
+@use "@/styles/theme" as *;
+
+.journal_topics_list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-top: 5rem;
+
+  h2 {
+    font-size: 4rem;
+    font-family: $moniqa;
+    color: $black;
+    margin-bottom: 1.958rem;
+
+    &.dark {
+      color: $gold;
+    }
+  }
+}
