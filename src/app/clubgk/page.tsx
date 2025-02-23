@@ -3,12 +3,16 @@ import './index.scss';
 
 import {useContext} from "react";
 import {ThemeContext} from "@/Contexts/theme-context.tsx";
+import Card from "@/Components/Card/card.tsx";
+import DiamondOutline from "@/Helpers/Svg/diamond-outline.tsx";
 
 const ClubGK = () => {
     const {theme} = useContext(ThemeContext)
 
     return (
         <div className={`club_container ${theme}`}>
+            <DiamondOutline/>
+
             <section className="section">
                 <h2 className={`page_title ${theme}`}>Club GK Gold</h2>
 
@@ -79,7 +83,58 @@ const ClubGK = () => {
                 </div>
             </section>
 
-            {/*3rd section*/}
+            <section className="section">
+                <h2 className={`page_title ${theme}`}>Club GK Gold</h2>
+
+                <div className="third_section_container">
+                    <Card>
+                        <div className="title_container">
+                            <h2>Networking</h2>
+                            <h2>Окружение</h2>
+                        </div>
+
+                        <ul>
+                            <li>Поиск нужных контактов</li>
+                            <li>Общение сединомышленниками,знакомства, совместный отдых</li>
+                            <li>Моральная, физическая июридическая поддержка другдруга</li>
+                            <li>Участие в разноформатныхвстречах и мероприятиях, организуемых Клубом и егопартнерами
+                            </li>
+                        </ul>
+                    </Card>
+                    <Card>
+                        <div className="title_container">
+                            <h2>Business</h2>
+                            <h2>Бизнес</h2>
+                        </div>
+
+                        <ul>
+                            <li>Возможность найти сильногопартнера, инвестора или наставника (ментора)</li>
+                            <li>Поиск долгосрочной стратегии</li>
+                            <li>Бизнес-идеи и помощь в их развитии</li>
+                            <li>Встречи с успешнымипредпринимателями / крупными топ-менеджерами</li>
+                            <li>Обмен экспертными знаниями</li>
+                            <li>Актуальная информация по узкимтемам (менеджмент, финансы, KPI, продукт, персонал,
+                                логистика)
+                            </li>
+                        </ul>
+                    </Card>
+                    <Card>
+                        <div className="title_container">
+                            <h2>Energy</h2>
+                            <h2>Энергия</h2>
+                        </div>
+
+                        <ul>
+                            <li>Ресурсное состояние</li>
+                            <li>Драйв и эмоции</li>
+                            <li>Вдохновение и мотивация</li>
+                            <li>Новый опыт, возможностьпрокачать определенные навыкии компетенции</li>
+                            <li>Перезагрузка себя и своегоокружения</li>
+                            <li>Поиск смыслов</li>
+                        </ul>
+                    </Card>
+                </div>
+            </section>
 
             <section className="section">
                 <h2 className={`page_title ${theme}`}>Портрет резидента</h2>

@@ -1,0 +1,19 @@
+.card_container {
+  width: 16.667rem;
+  height: 20.833rem;
+  background: rgba(20, 23, 28, 0.04);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 1.389rem 2.083rem;
+  box-sizing: border-box;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 0 8px 0 rgba(20, 23, 28, 0.1) inset;
+
+  &.dark {
+    background: rgba(255, 255, 255, 0.04);
+    box-shadow: 0 0 3px 0 rgba(255, 255, 255, 0.1) inset;
+  }
+}

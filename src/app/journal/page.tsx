@@ -10,7 +10,6 @@ import Button, {Theme} from "@/Components/UI/Button/button.tsx";
 import Arrow from "@/Helpers/Svg/arrow.tsx";
 import TableLight from "@/../public/assets/images/table-light.svg";
 import TableDark from "@/../public/assets/images/table-dark.svg";
-import BookBackdrop from "@/../public/assets/images/book-backdrop.svg";
 import {topics} from "@/app/journal/topics.ts";
 
 import "./index.scss";
@@ -23,7 +22,7 @@ export type Topic = {
 }
 
 const Journal = () => {
-    const [featuredTopic, setFeaturedTopic] = useState<Topic>(topics[0]);
+    const [featuredTopic, setFeaturedTopic] = useState<Topic>({...topics[0], image: topics[0].image.default.src});
     const router = useRouter();
 
     const {theme} = useContext(ThemeContext);

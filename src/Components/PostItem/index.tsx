@@ -1,11 +1,13 @@
 "use client";
 import './index.scss';
 
-import {FC, useContext} from "react";
+import {FC, useContext, useEffect} from "react";
 import Book from "@/Components/Book/book.tsx";
 import Button, {Theme} from "@/Components/UI/Button/button.tsx";
 import Arrow from "@/Helpers/Svg/arrow.tsx";
 import {ThemeContext} from "@/Contexts/theme-context.tsx";
+
+import {motion, useAnimate, useInView} from "motion/react";
 
 interface Props {
     onButtonClick?: () => void;
@@ -13,9 +15,21 @@ interface Props {
 
 const PostItem: FC<Props> = ({onButtonClick}) => {
     const {theme} = useContext(ThemeContext);
+    const [scope, animate] = useAnimate()
+    const isInView = useInView(scope, {once: true, amount: 0.7});
+
+    useEffect(() => {
+        if (isInView) {
+            animate(scope.current, {x: "0"}, {duration: 0.5, ease: 'linear'})
+        }
+    }, [isInView]);
 
     return (
-        <div className={`post_item_container ${theme}`}>
+        <motion.div
+            ref={scope}
+            initial={{x: "60%"}}
+            className={`post_item_container ${theme}`}
+        >
             <Book className="book"/>
 
             <div className="text_container">
@@ -33,7 +47,7 @@ const PostItem: FC<Props> = ({onButtonClick}) => {
                     <Arrow size={"0.833rem"}/>
                 </Button>
             </div>
-        </div>
+        </motion.div>
     )
 }
 export default PostItem
