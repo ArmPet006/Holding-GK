@@ -7,6 +7,10 @@
     width: 100%;
     height: auto;
   }
+
+  ::-webkit-scrollbar:horizontal {
+    background: unset !important;
+  }
 }
 
 .featured_container {
@@ -45,7 +49,7 @@
     margin-left: -5rem;
 
     &.dark {
-      color: white;
+      color: $white;
     }
   }
 }
@@ -63,4 +67,15 @@
           rgba(0, 0, 0, 1) 95%,
           rgba(0, 0, 0, 0)
   );
+}
+
+.journal_mobile_view_container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding-left: 4.75rem;
+
+  h2 {
+    margin-bottom: 1.958rem;
+  }
 }

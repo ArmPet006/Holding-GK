@@ -5,16 +5,47 @@ import {useContext} from "react";
 import {ThemeContext} from "@/Contexts/theme-context.tsx";
 import Card from "@/Components/Card/card.tsx";
 import DiamondOutline from "@/Helpers/Svg/diamond-outline.tsx";
+import {useScroll, useTransform, motion} from "motion/react";
 
 const ClubGK = () => {
-    const {theme} = useContext(ThemeContext)
+    const {theme} = useContext(ThemeContext);
+    const {scrollYProgress} = useScroll();
+
+    const firstTextTranslate = useTransform(
+        scrollYProgress,
+        [0, 0.3],
+        ["0%", "-100%"],
+        {clamp: false}
+    );
+
+    const secondTextTranslate = useTransform(
+        scrollYProgress,
+        [0, 0.3],
+        ["-100%", "0%"],
+        {clamp: false}
+    );
+
+    const thirdTextTranslate = useTransform(
+        scrollYProgress,
+        [0, 0.65],
+        ["-100%", "0%"],
+        {clamp: false}
+    );
+
+    const fourthTextTranslate = useTransform(
+        scrollYProgress,
+        [0, 1],
+        ["-100%", "0%"],
+        {clamp: false}
+    );
 
     return (
         <div className={`club_container ${theme}`}>
             <DiamondOutline/>
 
             <section className="section">
-                <h2 className={`page_title ${theme}`}>Club GK Gold</h2>
+                <motion.h2 style={{translateX: firstTextTranslate}} className={`page_title ${theme}`}>Club GK Gold
+                </motion.h2>
 
                 <div className="first_section_container">
                     <ul className="first_list">
@@ -54,7 +85,8 @@ const ClubGK = () => {
             </section>
 
             <section className="section">
-                <h2 className={`page_title ${theme}`}>Club GK Gold</h2>
+                <motion.h2 style={{translateX: secondTextTranslate}} className={`page_title ${theme}`}>Club GK Gold
+                </motion.h2>
 
                 <div className="second_section_container">
                     <h3>Что наше сообщество хочет дать вам?</h3>
@@ -84,7 +116,8 @@ const ClubGK = () => {
             </section>
 
             <section className="section">
-                <h2 className={`page_title ${theme}`}>Club GK Gold</h2>
+                <motion.h2 style={{translateX: thirdTextTranslate}} className={`page_title ${theme}`}>Club GK Gold
+                </motion.h2>
 
                 <div className="third_section_container">
                     <Card>
@@ -137,7 +170,9 @@ const ClubGK = () => {
             </section>
 
             <section className="section">
-                <h2 className={`page_title ${theme}`}>Портрет резидента</h2>
+                <motion.h2 style={{translateX: fourthTextTranslate}} className={`page_title ${theme}`}>Портрет
+                    резидента
+                </motion.h2>
 
                 <div className="fourth_section_container">
                     <h4>Наш основной ресурс –люди. Они создают ценность сообщества. От качества состава зависит

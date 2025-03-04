@@ -1,7 +1,8 @@
 "use client";
+import "./index.scss";
 
 import {useContext} from "react";
-import {useParams, useRouter} from "next/navigation";
+import {useRouter} from "next/navigation";
 import Image from "next/image";
 import {ThemeContext} from "@/Contexts/theme-context.tsx";
 
@@ -10,8 +11,7 @@ import {Facebook, Instagram, Telegram, VK, WhatsApp} from "@/Helpers/Svg/social-
 import Arrow from "@/Helpers/Svg/arrow.tsx";
 
 import {motion, useScroll, useTransform} from "motion/react";
-
-import "./index.scss";
+import BackButton from "@/Components/UI/BackButton/back-button.tsx";
 
 const userData = {
     images: [TestImage, TestImage],
@@ -22,8 +22,6 @@ const userData = {
 };
 
 const SinglePage = () => {
-    const {name, id} = useParams();
-    const router = useRouter();
     const {theme} = useContext(ThemeContext);
     const {scrollYProgress} = useScroll();
 
@@ -57,9 +55,7 @@ const SinglePage = () => {
 
     return (
         <div className={`single_hero_container ${theme}`}>
-            <button onClick={() => router.back()} className="back_button">
-                <Arrow size={"1.875rem"}/>
-            </button>
+            <BackButton/>
 
             <aside className="icon_container">
                 <a><Instagram/></a>

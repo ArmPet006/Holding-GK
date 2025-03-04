@@ -63,7 +63,7 @@
     a {
       color: $inactive-link-light;
 
-      span {
+      .external_link {
         color: $active-link-light;
       }
 
@@ -86,7 +86,7 @@
     a {
       color: $inactive-link-dark;
 
-      span {
+      .external_link {
         color: $active-link-dark;
       }
 
@@ -165,14 +165,7 @@
 
 .logo {
   width: 3.75rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  img {
-    width: 100%;
-    height: 100%;
-  }
+  height: 4.5rem;
 }
 
 .main_links {
@@ -192,7 +185,6 @@
     align-items: center;
     justify-content: center;
     font-family: $arsenal-sc;
-    font-weight: 400;
     font-size: 1.083rem;
     cursor: pointer;
 

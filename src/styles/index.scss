@@ -12,6 +12,7 @@
 ::-webkit-scrollbar {
   width: 7px;
   height: 7px;
+  background: #929084;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -23,6 +24,20 @@
   background: $light-gray;
   margin: 33vh 33vw;
   border-radius: 10px;
+}
+
+:root:has(.container.dark) {
+  ::-webkit-scrollbar {
+    background: #31353e;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: $gold;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: $light-gray;
+  }
 }
 
 .container {
@@ -41,12 +56,8 @@
   &.dark {
     background: $bg-dark;
 
-    ::-webkit-scrollbar-thumb {
-      background: $gold;
-    }
-
-    ::-webkit-scrollbar-track {
-      background: $light-gray;
+    .page_title {
+      color: $active-link-dark;
     }
 
     .back_button {
@@ -62,10 +73,6 @@
     font-family: $moniqa;
     font-size: 4rem;
     color: $active-link-light;
-
-    &.dark {
-      color: $active-link-dark;
-    }
   }
 
   .back_button {
@@ -87,6 +94,19 @@
 @media only screen and (max-width: 640px) {
   :root {
     font-size: 8px;
+  }
+
+  .container {
+    width: 100vw;
+    margin-left: 0;
+
+    .page_title {
+      font-size: 6rem;
+    }
+
+    .back_button {
+      display: none;
+    }
   }
 }
 

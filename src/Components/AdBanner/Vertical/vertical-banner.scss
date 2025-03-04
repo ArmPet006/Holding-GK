@@ -1,0 +1,16 @@
+.vertical_banner {
+  position: absolute;
+  width: 15rem;
+  height: 100%;
+  right: 0;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 640px) {
+  .vertical_banner {
+    width: calc(100% - 4.75rem);
+    height: 13.333rem;
+    position: static;
+  }
+}

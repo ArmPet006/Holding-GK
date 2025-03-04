@@ -7,6 +7,14 @@
   flex-direction: column;
   padding-right: 4.75rem;
 
+  ::-webkit-scrollbar {
+    background: unset !important;
+  }
+
+  ::-webkit-scrollbar-track {
+    margin: 5vh 5vw;
+  }
+
   &.dark {
     .icon_container {
       svg {
@@ -22,7 +30,7 @@
       }
 
       p {
-        color: white;
+        color: $white;
       }
     }
   }
@@ -34,9 +42,10 @@
     justify-content: center;
     gap: 1.667rem;
     position: fixed;
-    right: 30px;
+    right: 1.5rem;
     top: 0;
     bottom: 0;
+    z-index: 4;
 
     a {
       cursor: pointer;
@@ -86,10 +95,56 @@
 
   .info_container {
     p {
-      font-weight: normal;
       height: 10.417rem;
       overflow: auto;
       padding: 3.33rem 20px 20px 0;
+    }
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  .single_hero_container {
+    .icon_container {
+      gap: 3rem;
+
+      a {
+        svg {
+          width: 3rem;
+          height: 3rem;
+        }
+      }
+    }
+
+    .view {
+      height: auto;
+      padding-top: 10rem;
+    }
+
+    .block {
+      flex-direction: column-reverse;
+
+      img {
+        width: 35rem;
+        height: 45rem;
+      }
+
+      h2 {
+        font-size: 8rem;
+      }
+
+      p {
+        font-size: 3rem;
+      }
+    }
+
+    .info_container {
+      p {
+        font-size: 3rem;
+        font-weight: normal;
+        height: 35rem;
+        //overflow: auto;
+        padding: 5rem 20px 20px 0;
+      }
     }
   }
 }

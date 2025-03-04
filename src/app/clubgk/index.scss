@@ -7,7 +7,7 @@
   position: relative;
 
   &.dark {
-    .section .third_section_container .title_container h2, h3 {
+    .section .third_section_container .title_container h2, h3, span {
       color: $gold;
     }
 
@@ -26,7 +26,7 @@
     width: 29.167rem;
     height: 26.167rem;
     position: fixed;
-    bottom: 5.208rem;
+    top: 12rem;
     align-self: center;
     margin-left: -6.75rem;
 
@@ -201,4 +201,106 @@
       }
     }
   }
+}
+
+@media only screen and (max-width: 640px) {
+  .club_container {
+    svg {
+      display: none;
+    }
+
+    .section {
+      .first_section_container {
+        flex-direction: column;
+        gap: 2rem;
+
+        .first_list {
+          max-width: none;
+
+          li {
+            font-size: 2.5rem;
+
+            span {
+              font-size: 3rem;
+            }
+          }
+        }
+
+        p {
+          font-size: 2.5rem;
+          max-width: none;
+        }
+
+        .second_list {
+          max-width: none;
+          margin-left: 2.5rem;
+          margin-top: 2rem;
+          gap: 1rem;
+
+          li {
+            font-size: 2.5rem;
+          }
+        }
+      }
+
+      .second_section_container {
+        h3 {
+          font-size: 3.5rem;
+        }
+
+        ul {
+          li {
+            font-size: 2.5rem;
+          }
+        }
+      }
+
+      .third_section_container {
+        flex-direction: column;
+        gap: 2rem;
+
+        .card_container {
+          width: 100%;
+          height: auto;
+          padding: 3rem 5rem;
+
+          .title_container {
+            h2 {
+              &:nth-child(1) {
+                font-size: 5rem;
+              }
+
+              &:nth-child(2) {
+                font-size: 4rem;
+              }
+            }
+          }
+
+          ul {
+
+            li {
+              font-size: 1.7rem;
+            }
+          }
+        }
+      }
+
+      .fourth_section_container {
+        h4 {
+          font-size: 2.7rem;
+        }
+
+        h3 {
+          font-size: 3.5rem;
+        }
+
+        ul {
+          li {
+            font-size: 2.5rem;
+          }
+        }
+      }
+    }
+  }
+
 }

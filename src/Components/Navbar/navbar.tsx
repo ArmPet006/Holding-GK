@@ -1,5 +1,3 @@
-"use client";
-
 import {FC, useContext} from "react";
 import NavLink from "./navlink.tsx";
 import Image from "next/image";
@@ -24,9 +22,8 @@ const Navbar: FC<any> = () => {
     return (
         <nav className={`navbar ${theme}`}>
             <div className="wrapper">
-                <div className="logo">
-                    <Image src={Logo} alt="logo"/>
-                </div>
+                <Image className="logo" src={Logo} alt="logo"/>
+                
                 <div className="main_links">
                     <NavLink href="/" pageName="Главная">
                         <Image className="icon" src={HomeIcon} icon-name="home" alt="icon"/>

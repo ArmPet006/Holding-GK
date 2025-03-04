@@ -16,7 +16,7 @@
     position: absolute;
 
     &.next {
-      right: 8.5rem;
+      right: 8.25rem;
     }
 
     &.prev {
@@ -40,6 +40,7 @@
   overflow-x: hidden;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
+  cursor: pointer;
 
   &::-webkit-scrollbar {
     display: none;
@@ -49,7 +50,20 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: right;
     flex: 0 0 100%;
     scroll-snap-align: start;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  .banner_container {
+    margin-left: -4.75rem;
+
+    .slide_button {
+      &.next {
+        right: 3.5rem;
+      }
+    }
   }
 }

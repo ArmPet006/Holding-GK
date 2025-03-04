@@ -29,7 +29,7 @@ const Form: FC<Props> = ({theme}) => {
                     fontSize: '1.5rem'
                 }}
             >
-                Отправить
+                <span>Отправить</span>
                 <Arrow size={"1.25rem"}/>
             </Button>
         </div>

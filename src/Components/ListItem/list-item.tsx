@@ -36,7 +36,7 @@ const ListItem: FC<Props> = ({image, title, onClick, className, buttonProps, onB
                     theme={theme === "light" ? Theme.dark : Theme.light}
                     onClick={onButtonClick}
                 >
-                    Узнать больше
+                    <span>Узнать больше</span>
                     <Arrow size={buttonProps?.arrowSize || "0.833rem"}/>
                 </Button>
             </div>

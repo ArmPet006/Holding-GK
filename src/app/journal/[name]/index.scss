@@ -5,15 +5,15 @@
   display: flex;
   flex-direction: column;
   padding-top: 5rem;
+  gap: 2rem;
 
   h2 {
-    font-size: 4rem;
-    font-family: $moniqa;
-    color: $black;
     margin-bottom: 1.958rem;
+  }
+}
 
-    &.dark {
-      color: $gold;
-    }
+@media only screen and (max-width: 640px) {
+  .journal_topics_list {
+    padding-top: 0;
   }
 }

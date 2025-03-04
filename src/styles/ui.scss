@@ -10,10 +10,65 @@
   align-items: center;
   justify-content: center;
   gap: 5px;
+  position: relative;
+  overflow: hidden;
+  transition: 0.2s;
+
+  span, svg {
+    position: relative;
+    z-index: 2;
+  }
+
+  &.filled:hover {
+    transition: 0.2s;
+    filter: brightness(0.5);
+  }
+
+  &.dark:hover {
+    color: $gold;
+
+    svg {
+      path {
+        fill: $gold;
+      }
+    }
+
+    &:before {
+      transition: 0.4s;
+      width: 100%;
+    }
+  }
+
+  &.light:hover {
+    color: $black;
+
+    svg {
+      path {
+        fill: $black;
+      }
+    }
+
+    &:before {
+      transition: 0.4s;
+      width: 100%;
+    }
+  }
 
   &.dark {
     border: 1px solid $black;
     color: $black;
+
+    &:before {
+      width: 0;
+      height: 100%;
+      content: "";
+      display: block;
+      background: $black;
+      position: absolute;
+      left: 0;
+      transition: 0.5s;
+      transform-origin: left;
+    }
 
     svg {
       path {
@@ -36,6 +91,18 @@
   &.light {
     border: 1px solid $gold;
     color: $gold;
+
+    &:before {
+      width: 0;
+      height: 100%;
+      content: "";
+      display: block;
+      background: $gold;
+      position: absolute;
+      left: 0;
+      transition: 0.5s;
+      transform-origin: left;
+    }
 
     svg {
       path {

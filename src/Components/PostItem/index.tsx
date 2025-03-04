@@ -8,15 +8,17 @@ import Arrow from "@/Helpers/Svg/arrow.tsx";
 import {ThemeContext} from "@/Contexts/theme-context.tsx";
 
 import {motion, useAnimate, useInView} from "motion/react";
+import {useRouter} from "next/navigation";
 
 interface Props {
-    onButtonClick?: () => void;
+    navigatePath?: string;
 }
 
-const PostItem: FC<Props> = ({onButtonClick}) => {
+const PostItem: FC<Props> = ({navigatePath}) => {
     const {theme} = useContext(ThemeContext);
     const [scope, animate] = useAnimate()
-    const isInView = useInView(scope, {once: true, amount: 0.7});
+    const isInView = useInView(scope, {once: true, amount: 0.5});
+    const router = useRouter();
 
     useEffect(() => {
         if (isInView) {
@@ -27,7 +29,7 @@ const PostItem: FC<Props> = ({onButtonClick}) => {
     return (
         <motion.div
             ref={scope}
-            initial={{x: "60%"}}
+            initial={{x: "10rem"}}
             className={`post_item_container ${theme}`}
         >
             <Book className="book"/>
@@ -37,13 +39,14 @@ const PostItem: FC<Props> = ({onButtonClick}) => {
                 <p>Амбициозные проекты, желание постоянно расти и развиваться, а еще чувство эмпатии и социальной
                     ответственности — пожалуй, сегодня именно эти ключевые характеристики объединяют
                     женщин-предпринимателей.</p>
+
                 <Button
                     width={"6.958rem"}
                     height={"1.792rem"}
                     theme={theme === "light" ? Theme.dark : Theme.light}
-                    onClick={onButtonClick}
+                    onClick={() => router.push(navigatePath || "")}
                 >
-                    Узнать больше
+                    <span>Узнать больше</span>
                     <Arrow size={"0.833rem"}/>
                 </Button>
             </div>

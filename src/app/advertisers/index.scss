@@ -12,17 +12,6 @@
       color: $gold;
     }
 
-    .advertisers_card {
-      background: rgba(255, 255, 255, 0.04);
-      box-shadow: 0 0 3px 0 rgba(255, 255, 255, 0.1) inset;
-
-      .advertisers_card_description {
-        .advertisers_card_title, .advertisers_card_price {
-          color: $white;
-        }
-      }
-    }
-
     svg {
       path {
         stroke: rgba(210, 183, 138, 0.3);
@@ -37,8 +26,6 @@
   svg:not(button svg) {
     position: absolute;
     height: 100vh;
-    transform: rotateZ(30deg);
-    top: 5rem;
     left: 15.5rem;
 
     path {
@@ -54,6 +41,87 @@
     align-items: center;
     box-sizing: border-box;
     gap: 5rem;
+
+    .card_container {
+      justify-content: flex-end;
+
+      &.dark {
+        .advertisers_card_description {
+          .advertisers_card_price, .advertisers_card_title {
+            color: $white;
+          }
+        }
+      }
+
+      .advertisers_card_logo {
+        width: 12.5rem;
+        margin-bottom: 3.889rem;
+      }
+
+      .advertisers_card_description {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 0.667rem;
+
+        .advertisers_card_title {
+          color: $black;
+          font-size: 2rem;
+          font-family: $moniqa;
+        }
+
+        .advertisers_card_price {
+          color: $black;
+          font-size: 1.333rem;
+          font-family: $moniqa;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  .advertisers_container {
+    padding-right: 4.75rem;
+
+    svg:not(button svg) {
+      display: none;
+    }
+
+    .advertisers_list {
+      .card_container {
+        width: 100%;
+        height: auto;
+
+        .advertisers_card_logo {
+          width: 22.5rem;
+          margin-top: 10rem;
+          margin-bottom: 10rem;
+        }
+
+        .advertisers_card_description {
+
+          .advertisers_card_title {
+            font-size: 4rem;
+          }
+
+          .advertisers_card_price {
+            font-size: 3rem;
+          }
+        }
+
+        button {
+          height: 4rem !important;
+          font-size: 3rem;
+
+          svg {
+            width: 2rem;
+            height: 2rem;
+          }
+        }
+      }
+    }
   }
 }
 

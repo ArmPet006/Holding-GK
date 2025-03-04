@@ -1,11 +1,7 @@
-"use client";
 import "./index.scss";
 
 import PostItem from "@/Components/PostItem";
-import {useParams, useRouter} from "next/navigation";
-import Arrow from "@/Helpers/Svg/arrow.tsx";
-import {useContext} from "react";
-import {ThemeContext} from "@/Contexts/theme-context.tsx";
+import BackButton from "@/Components/UI/BackButton/back-button.tsx";
 
 enum PageTitle {
     specproject = "Спецпроект",
@@ -15,22 +11,28 @@ enum PageTitle {
     lookst = "Look st"
 }
 
-const JournalTopicList = () => {
-    const {theme} = useContext(ThemeContext);
-    const {name}: { name: string } = useParams();
-    const router = useRouter();
+// export async function generateStaticParams() {
+//     return [
+//         {name: "specproject"},
+//         {name: "body"},
+//         {name: "funtoys"},
+//         {name: "homeanddesign"},
+//         {name: "lookst"}
+//     ];
+// }
+
+const JournalTopicList = async ({params}: any) => {
+    const {name}: { name: string } = await params;
 
     return (
         <>
-            <button onClick={() => router.replace("/journal")} className="back_button">
-                <Arrow size={"1.875rem"}/>
-            </button>
+            <BackButton/>
 
             <div className="journal_topics_list">
-                <h2 className={theme}>{PageTitle[name as keyof typeof PageTitle]}</h2>
+                <h2 className="page_title">{PageTitle[name as keyof typeof PageTitle]}</h2>
                 {
                     Array(10).fill(0).map((_, index) => (
-                        <PostItem key={index} onButtonClick={() => router.push(`${name}/${index}`)}/>
+                        <PostItem key={index} navigatePath={`${name}/${index}`}/>
                     ))
                 }
             </div>

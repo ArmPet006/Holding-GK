@@ -7,3 +7,13 @@
   column-gap: 2.667rem;
   row-gap: 5.667rem;
 }
+
+@media only screen and (max-width: 640px) {
+  .heroes_list {
+    column-gap: 10rem;
+    row-gap: 12rem;
+    justify-content: center;
+    margin-top: 5rem;
+    margin-left: -4.75rem;
+  }
+}

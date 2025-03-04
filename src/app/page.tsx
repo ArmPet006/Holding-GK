@@ -4,12 +4,14 @@ import './index.scss'
 import LogoOutline from "@/Helpers/Svg/logo-outline.tsx";
 import {createRef, FC, RefObject, useContext, useEffect, useRef, useState} from "react";
 import {ThemeContext} from "@/Contexts/theme-context.tsx";
-import AdBanner from "@/Components/AdBanner/banner.tsx";
+import AdBanner from "@/Components/AdBanner/Horizontal/banner.tsx";
 
 import PostItem from "Components/PostItem";
 import ListItem from "@/Components/ListItem/list-item.tsx";
 import JournalLogo from "@/../public/assets/images/journal-logo.svg";
 import Arrow from "@/Helpers/Svg/arrow.tsx";
+import VerticalAdBanner from "@/Components/AdBanner/Vertical/vertical-banner.tsx";
+import SectionSlide from "@/app/section-slide.tsx";
 
 const ProjectItemButtonProps = {
     width: "9.708rem",
@@ -55,16 +57,7 @@ const Home: FC = () => {
             </section>
             <AdBanner/>
             <section className="page_slider">
-                <div className="slide" ref={refs.current[0]}>
-                    <h3>Книга</h3>
-                    <PostItem/>
-                    <PostItem/>
-                    <div className="slide_button_container">
-                        <button className="slide_button next" onClick={scrollToNextBlock}>
-                            <Arrow size={"1.875rem"}/>
-                        </button>
-                    </div>
-                </div>
+                <SectionSlide ref={refs.current[0]} nextButtonClick={scrollToNextBlock}/>
                 <div className="slide" ref={refs.current[1]}>
                     <h3>Журнал</h3>
                     <PostItem/>
@@ -79,6 +72,7 @@ const Home: FC = () => {
                             <Arrow size={"1.875rem"}/>
                         </button>
                     </div>
+                    <VerticalAdBanner/>
                 </div>
                 <div className="slide" ref={refs.current[2]}>
                     <h3>Club GK Gold</h3>
@@ -90,6 +84,7 @@ const Home: FC = () => {
                             <Arrow size={"1.875rem"}/>
                         </button>
                     </div>
+                    <VerticalAdBanner/>
                 </div>
             </section>
         </div>

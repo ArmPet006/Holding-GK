@@ -2,9 +2,11 @@
 
 import {ThemeProvider} from "@/Providers/theme-provider.tsx";
 import Navbar from "@/Components/Navbar/navbar.tsx";
-import {useContext} from "react";
+import {useContext, useEffect, useState} from "react";
 import {ThemeContext} from "@/Contexts/theme-context.tsx";
 import {usePathname} from "next/navigation";
+import MobileNavbar from "@/Components/Navbar/Mobile/mobile-navbar.tsx";
+import useMobile from "@/Hooks/use-mobile.tsx";
 
 const Wrapper = ({children}: { children: React.ReactNode }) => {
     const {theme} = useContext(ThemeContext);
@@ -21,9 +23,16 @@ const Wrapper = ({children}: { children: React.ReactNode }) => {
 }
 
 const Providers = ({children}: { children: React.ReactNode }) => {
+    const {loading, isMobile} = useMobile();
+
+    if (loading) {
+        return <h1>loading</h1>
+    }
+
     return (
+        !loading &&
         <ThemeProvider>
-            <Navbar/>
+            {isMobile ? <MobileNavbar/> : <Navbar/>}
             <Wrapper>{children}</Wrapper>
         </ThemeProvider>
     )

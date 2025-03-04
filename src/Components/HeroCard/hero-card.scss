@@ -68,3 +68,25 @@
     font-family: 'Moniqa', serif;
   }
 }
+
+@media only screen and (max-width: 640px) {
+  .hero_card {
+    width: 35rem;
+    height: 45rem;
+
+    h3 {
+      font-size: 7rem;
+    }
+
+    .info_container {
+      p {
+        font-size: 4rem;
+      }
+
+      svg {
+        width: 4rem;
+        height: 4rem;
+      }
+    }
+  }
+}
