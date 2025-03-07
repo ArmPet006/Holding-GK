@@ -24,7 +24,7 @@ const ListItem: FC<Props> = ({image, title, onClick, className, buttonProps, onB
     const {theme} = useContext(ThemeContext);
 
     return (
-        <div className={`list_item_container ${className}`}>
+        <div className={`list_item_container ${className ?? ""}`}>
             <Book className="book" imgSrc={image} onClick={onClick}/>
 
             <div className="text_container">

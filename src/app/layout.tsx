@@ -1,14 +1,15 @@
-import {Metadata} from "next";
-
-import Providers from "@/app/providers.tsx";
 import "@/styles/index.scss";
+
+import {Metadata} from "next";
+import {ThemeProvider} from "@/Providers/theme-provider.tsx";
+import Wrapper from "@/app/providers.tsx";
 
 export const metadata: Metadata = {
     title: '...',
     description: '...',
 }
 
-export const dynamic = 'force-dynamic';
+// export const dynamic = 'force-dynamic';
 
 export default function RootLayout({children}: { children: React.ReactNode }) {
     return (
@@ -28,9 +29,9 @@ export default function RootLayout({children}: { children: React.ReactNode }) {
         </head>
         <body>
         <main id="root">
-            <Providers>
-                {children}
-            </Providers>
+            <ThemeProvider>
+                <Wrapper>{children}</Wrapper>
+            </ThemeProvider>
         </main>
         </body>
         </html>

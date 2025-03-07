@@ -67,6 +67,10 @@
           rgba(0, 0, 0, 1) 95%,
           rgba(0, 0, 0, 0)
   );
+
+  .list_item_container figure {
+    cursor: pointer;
+  }
 }
 
 .journal_mobile_view_container {
